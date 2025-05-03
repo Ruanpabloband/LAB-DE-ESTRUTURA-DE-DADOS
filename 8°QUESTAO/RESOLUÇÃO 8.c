@@ -23,6 +23,7 @@ void menu();
 
 int main()
 {
+    system ("cls");
     menu();
     return 0;
 }
@@ -77,7 +78,9 @@ void cadastrar()
 
     printf("\nCadastro de Produto %d\n", total_produtos + 1);
     printf("Nome: ");
-    scanf("%19s", Produtos[total_produtos].nome);
+    getchar(); 
+    fgets(Produtos[total_produtos].nome, sizeof(Produtos[total_produtos].nome), stdin);
+    Produtos[total_produtos].nome[strcspn(Produtos[total_produtos].nome, "\n")] = '\0';
     printf("Codigo: ");
     scanf("%d", &Produtos[total_produtos].codigo);
     printf("Quantidade: ");
@@ -109,7 +112,7 @@ void buscar()
             printf("Produto encontrado!!\n");
             printf("Nome: %s\n", Produtos[i].nome);
             printf("Codigo: %d\n", Produtos[i].codigo);
-            printf("Preco: %.2f$\n", Produtos[i].preco);
+            printf("Preco: %.2f $\n", Produtos[i].preco);
             printf("Quantidade: %d\n", Produtos[i].quantidade);
             return;
         }
@@ -130,7 +133,7 @@ printf("\nLista de Produtos:\n");
         printf("Nome: %s\n", Produtos[i].nome);
         printf("Codigo: %d\n", Produtos[i].codigo);
         printf("Quantidade: %d\n", Produtos[i].quantidade);
-        printf("Preco: %.2f$\n", Produtos[i].preco);
+        printf("Preco: %.2f $\n", Produtos[i].preco);
     }
 
 }

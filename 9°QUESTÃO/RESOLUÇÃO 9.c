@@ -129,6 +129,6 @@ void listar()
         printf("Contato:%d\n", i + 1);
         printf("\n");
         printf("Nome: %s\n", contatos[i].nome);
-        printf("Numero:%d\n", contatos[i].numero);
+        printf("Numero: %d\n", contatos[i].numero);
     }
 }
