@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <math.h>
 
 /*Função para calcular se o numero e primo, utilizando true or false. */
 bool primo(int Ninteiro)
@@ -21,7 +20,6 @@ bool primo(int Ninteiro)
         if (Ninteiro % i == 0)
             return false;
     }
-
     return true;
 }
 
