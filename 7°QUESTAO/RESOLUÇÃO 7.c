@@ -11,7 +11,6 @@ struct aluno
 
 int main()
 {
-
     int quanti;
 
     printf("Insira a quantidade de Alunos>\n");
