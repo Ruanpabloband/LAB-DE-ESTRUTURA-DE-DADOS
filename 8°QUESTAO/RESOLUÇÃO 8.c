@@ -112,11 +112,13 @@ void buscar()
     {
         if (Produtos[i].codigo == cod_verificar)
         {
+            printf("\n");
             printf("Produto encontrado!\n");
             printf("Nome: %s\n", Produtos[i].nome);
             printf("Codigo: %d\n", Produtos[i].codigo);
             printf("Preco: %.2f $\n", Produtos[i].preco);
             printf("Quantidade: %d\n", Produtos[i].quantidade);
+            printf("\n");
             return;
         }
     }
