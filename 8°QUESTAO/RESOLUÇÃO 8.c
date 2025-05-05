@@ -3,7 +3,8 @@
 #include <string.h>
 
 // Estrutura para representar um produto
-typedef struct {
+typedef struct
+{
     char nome[20];
     int codigo;
     int quantidade;
@@ -20,15 +21,18 @@ void buscar();
 void listar();
 void menu();
 
-int main() {
+int main()
+{
     system("cls"); // Limpa a tela (Windows)
     menu();        // Chama o menu principal
     return 0;
 }
 
-void menu() {
+void menu()
+{
     int n;
-    do {
+    do
+    {
         // Menu de opções
         printf("Escolha uma opcao: \n");
         printf("1- Cadastrar um produto\n");
@@ -37,18 +41,19 @@ void menu() {
         printf("4- Sair\n");
         scanf("%d", &n);
 
-        switch (n) {
+        switch (n)
+        {
         case 1:
             system("cls");
             cadastrar(); // Cadastra novo produto
             break;
         case 2:
             system("cls");
-            buscar();    // Busca produto pelo código
+            buscar(); // Busca produto pelo código
             break;
         case 3:
             system("cls");
-            listar();    // Lista todos os produtos
+            listar(); // Lista todos os produtos
             break;
         case 4:
             printf("Saindo...\n");
@@ -61,10 +66,12 @@ void menu() {
     } while (n != 4); // Continua até o usuário escolher sair
 }
 
-void cadastrar() {
+void cadastrar()
+{
     // Realoca memória para mais um produto
     produto *temp = realloc(Produtos, (total_produtos + 1) * sizeof(produto));
-    if (temp == NULL) {
+    if (temp == NULL)
+    {
         printf("Erro ao alocar memoria!\n");
         return;
     }
@@ -88,8 +95,10 @@ void cadastrar() {
     printf("Produto cadastrado com sucesso!\n");
 }
 
-void buscar() {
-    if (total_produtos == 0) {
+void buscar()
+{
+    if (total_produtos == 0)
+    {
         printf("Nenhum produto cadastrado!\n");
         return;
     }
@@ -99,8 +108,10 @@ void buscar() {
     scanf("%d", &cod_verificar);
 
     // Procura o produto pelo código
-    for (int i = 0; i < total_produtos; i++) {
-        if (Produtos[i].codigo == cod_verificar) {
+    for (int i = 0; i < total_produtos; i++)
+    {
+        if (Produtos[i].codigo == cod_verificar)
+        {
             printf("Produto encontrado!\n");
             printf("Nome: %s\n", Produtos[i].nome);
             printf("Codigo: %d\n", Produtos[i].codigo);
@@ -112,15 +123,18 @@ void buscar() {
     printf("Produto nao encontrado!\n");
 }
 
-void listar() {
-    if (total_produtos == 0) {
+void listar()
+{
+    if (total_produtos == 0)
+    {
         printf("Nenhum produto cadastrado!\n");
         return;
     }
 
     // Mostra todos os produtos cadastrados
     printf("\nLista de Produtos:\n");
-    for (int i = 0; i < total_produtos; i++) {
+    for (int i = 0; i < total_produtos; i++)
+    {
         printf("\nProduto %d:\n", i + 1);
         printf("Nome: %s\n", Produtos[i].nome);
         printf("Codigo: %d\n", Produtos[i].codigo);

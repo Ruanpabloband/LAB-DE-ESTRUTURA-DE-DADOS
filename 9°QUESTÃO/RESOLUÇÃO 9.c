@@ -3,7 +3,8 @@
 #include <string.h>
 
 // Estrutura para armazenar um contato com nome e número
-typedef struct {
+typedef struct
+{
     char nome[20];
     int numero;
 } contato;
@@ -18,15 +19,18 @@ void adicionar();
 void buscar();
 void listar();
 
-int main() {
+int main()
+{
     system("cls"); // Limpa a tela (Windows)
     menu();        // Chama o menu principal
     return 0;
 }
 
-void menu() {
+void menu()
+{
     int escolha;
-    do {
+    do
+    {
         // Exibe as opções do menu
         printf("Agenda de contatos>>\n");
         printf("1- Adicionar um numero de telefone\n");
@@ -35,9 +39,11 @@ void menu() {
         printf("4- Sair\n");
         scanf("%d", &escolha);
 
-        while (getchar() != '\n'); // Limpa o buffer do teclado
+        while (getchar() != '\n')
+            ; // Limpa o buffer do teclado
 
-        switch (escolha) {
+        switch (escolha)
+        {
         case 1:
             system("cls");
             adicionar(); // Chama função para adicionar contato
@@ -45,12 +51,12 @@ void menu() {
             break;
         case 2:
             system("cls");
-            buscar();    // Chama função para buscar contato por número
+            buscar(); // Chama função para buscar contato por número
             printf("\n\n");
             break;
         case 3:
             system("cls");
-            listar();    // Exibe todos os contatos cadastrados
+            listar(); // Exibe todos os contatos cadastrados
             printf("\n\n");
             break;
         case 4:
@@ -64,10 +70,12 @@ void menu() {
     } while (escolha != 4); // Repete até o usuário escolher sair
 }
 
-void adicionar() {
+void adicionar()
+{
     // Realoca espaço para mais um contato
     contato *cad = realloc(contatos, (total_contatos + 1) * sizeof(contato));
-    if (cad == NULL) {
+    if (cad == NULL)
+    {
         printf("Erro ao alocar memória!\n");
         return;
     }
@@ -84,8 +92,10 @@ void adicionar() {
     printf("Contato cadastrado com sucesso!\n");
 }
 
-void buscar() {
-    if (total_contatos == 0) {
+void buscar()
+{
+    if (total_contatos == 0)
+    {
         printf("Nenhum contato salvo!\n");
         return;
     }
@@ -95,8 +105,10 @@ void buscar() {
     scanf("%d", &verificar);
 
     // Procura o número informado nos contatos
-    for (int i = 0; i < total_contatos; i++) {
-        if (contatos[i].numero == verificar) {
+    for (int i = 0; i < total_contatos; i++)
+    {
+        if (contatos[i].numero == verificar)
+        {
             printf("\nContato encontrado:\n");
             printf("Nome: %s\n", contatos[i].nome);
             printf("Numero: %d\n", contatos[i].numero);
@@ -106,15 +118,18 @@ void buscar() {
     printf("Contato nao encontrado!\n");
 }
 
-void listar() {
-    if (total_contatos == 0) {
+void listar()
+{
+    if (total_contatos == 0)
+    {
         printf("Nenhum contato na lista!\n");
         return;
     }
 
     // Exibe todos os contatos cadastrados
     printf("Lista de contatos salvos>>\n");
-    for (int i = 0; i < total_contatos; i++) {
+    for (int i = 0; i < total_contatos; i++)
+    {
         printf("Contato %d:\n", i + 1);
         printf("Nome: %s\n", contatos[i].nome);
         printf("Numero: %d\n", contatos[i].numero);
