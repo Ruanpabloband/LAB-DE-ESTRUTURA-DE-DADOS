@@ -2,6 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Hello",
+      "request": "launch",
+      "mainClass": "Hello"
+    },
+    {
+      "type": "java",
+      "name": "Hellow",
+      "request": "launch",
+      "mainClass": "Hellow"
+    },
+    {
+      "type": "java",
+      "name": "hellow",
+      "request": "launch",
+      "mainClass": "hellow"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
